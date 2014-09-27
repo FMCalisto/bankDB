@@ -40,77 +40,77 @@ specific program for Secure Copy, ("WinSCP" for Windows, "scp" on Linux).
 
 ## Using the Command Line
 
-6. Coloque o	ficheiro bank.sql na sua	área	pessoal no	cluster	sigma.ist.utl.pt que	está	no	
-site	da	cadeira	no	Fenix.		Caso	esteja	a	 fazer	o	download	a	partir	de	um	dos	PCs	 do	
-laboratórios	em	Linux,	então	esta	cópia	não	será	necessária	dado	que	o	download	do	
-browser	já	deixa	os ficheiros	na	vossa	área	no	sigma.
+6. Place the file in your home bank.sql area in sigma.ist.utl.pt cluster that is in 
+Chair site in Phoenix. If you are downloading from one of the PCs 
+laboratories in Linux, then this copy is not required since the download 
+browser gets files already in your area in sigma. 
 
-7. Entre	na	sua	área	do	sigma,	como	explicado	no	passo	2,	e	navegue	até	ao	directório	
-onde	guardou	o	ficheiro.
+7. Between sigma in your area, as explained in step 2, and navigate to the directory 
+where you saved the file. 
 
-8. Entre	no	MySQL,	como	explicado	no	passo	3	e	4.
+8. Between in MySQL, as explained in step 3 and 4. 
 
-9. Uma	vez	dentro	do	MySQL,	utilize	o	comando:	USE	istxxxxx
-para	 se	 ligar	 à	 sua	 base	 de	 dados	 com	 o	 nome	 istxxxxx,	 em	 que	 istxxxxx	 deve	 ser	
-substituído	pelo seu	nome	de	utilizador.
+9. Once in MySQL, use the command: USE istxxxxx 
+to connect to your database with istxxxxx name where istxxxxx should be 
+replaced by your username. 
 
-10. Use	help para	obter	informação	sobre	os	comandos	disponíveis.
+10. Use help for information about the available commands. 
 
-11. Se	precisar	de	sair	do	programa,	pode	utilizar	a	qualquer	momento	o	comando: quit
+11. If you need to exit the program, you can use any time the command: quit 
 
-12. Na	lista	de	comandos	terá	notado	a	existência	de	um	comando	nesta	forma:
-source				(\.) Execute	an	SQL	script	file.	Takes	a	file	name	as	an	argument.
+In the command list 12 will have noticed the existence of a command in this manner: 
+source (\.) Execute an SQL script file. Takes a file name to an argument. 
 
-13. É	este	comando	 que	deverá	utilizar	 para	executar	as	instruções	 no	 ficheiro	bank.sql.	
-source	bank.sql
-O	sistema produz	algumas	mensagens	à	medida	que	executa	as	instruções	do	ficheiro.
+13. It is this command you should use to execute the instructions in bank.sql file. 
+bank.sql source 
+The system produces some messages as it executes instructions file. 
 
-14. Para	listar	as	tabelas	da	base	de	dados,	use	o	comando:	show	tables;
+14. To list the tables of the database, use the command: show tables; 
 
-15. Após	a	ligação	à base	de	dados	pode	fazer	algumas	consultas,	nomeadamente:
+15. After connecting to the database can make some queries, such as: 
 
-• ver	a	lista	completa	de	clientes: SELECT	*	FROM	customer;
+• a complete list of clients: SELECT * FROM customer; 
 
-• ver	a	lista	completa	de	contas:	SELECT	*	FROM	account;
+• a complete list of accounts: SELECT * FROM account; 
 
-• ver	o	saldo	da	conta	A-101:
+• see the account balance A-101:
 
 ```
 SELECT balance	FROM	account	WHERE	account_number='A-101';
 ```
 
-Em	aulas	futuras	verá	como	obter	a	resposta	a	consultas	mais	complexas
+In future classes will see how to get the answer more complex queries
 
 
 ## Information about the schema of a database
 
-16. Utilize	o	comando	SHOW	DATABASES; para	obter	informação	sobre	as	bases	de	dados	
-existentes	no	sistema.
+16. Use the command SHOW DATABASES; for information about the databases 
+in the system. 
 
-17. Para	se	ligar	à	sua	base	de	dados,	utilize	o	comando:	USE	istxxxxx (onde	istxxxxx	é	o	
-seu	nome	de	utilizador)
+17. To connect to your database, use the command: USE istxxxxx (where is the istxxxxx 
+Your username) 
 
-18. Para	listar	as	tabelas	da	base	de	dados,	use	o	comando:	SHOW	TABLES;
+18. To list the tables of the database, use the command: SHOW TABLES; 
 
-19. Obtenha	informação	sobre	as	tabelas	de	clientes	e	contas:
+19. Get information about tables and accounts:
 
 ```
 DESCRIBE customer;
 DESCRIBE account;
 ```
 
-Confirme	que	a estrutura dessas tabelas	está	de	acordo com as	instruções	que	foram	
-dadas no	ficheiro	bank.sql.
+Confirm the structure of these tables is in accordance with the instructions which were 
+given in bank.sql file. 
 
-20. Use	o	comando	quit para	sair	do	sistema	e	voltar	ao	terminal.
+20. Use the quit command to exit the system and return to the terminal.
 
 
 ## Full-text search in MySQL system
 
-21. Use	 os	 seguintes	 comandos	 para	 criar	 uma	 tabela	 de	 nome	 bank_news,	 e	 para	 lhe	
-associar os	 conteúdos	 textuais	 de	 artigos	 noticiosos	 relevantes	 no	 domínio	 de	 um	
-banco.	 Note	 que	 a criação	 da	 tabela	 envolve também	 um	 índice	 que suporta a	
-execução	de	pesquisas	full-text.
+21. Use the following commands to create a table of bank_news name, and you 
+associate the textual content of relevant news articles in the field of a 
+bank. Note that the table creation also involves an index that supports 
+execution of full-text search.
 
 ```
 create table bank_news (
@@ -138,10 +138,10 @@ insert into bank_news values ( 5 , 'Branch in Redwood' , 'New
 branch in Redwood is bringing us closer to clients in the area.');
 ```
 
-22. Após	 proceder	 à	 criação	 da	 tabela,	 pode executar	 consultas	 envolvendo	 restrições	
-sobre	os	conteúdos	textuais	dos	artigos noticiosos.
+22. After undertaking the creation of the table, you can execute queries involving restrictions 
+on the textual contents of news articles. 
 
-• Encontrar	todos	os	artigos	cujo	conteúdo	se	relacione	com	“city	center”:
+• Find all the articles whose content relates to "city center":
 
 ```
 select	*	
@@ -162,44 +162,46 @@ order	by	score	desc;
 
 ## Developing applications with MySQL database: Example in PHP
 
-23. Edite	 o	 ficheiro	test.php e	 coloque	 o	 seu	nome	 de	 utilizador	 e	 password	 (dada	 pelo
-mysql_reset)	nas	variáveis	$user	e	$password,	respectivamente.
+23. Edit the test.php file and put your username and password (given by 
+mysql_reset) in the variables $ user and $ password respectively. 
 
-24. Usando	um	cliente	de	SCP (“WinSCP”	em	Windows;	“scp”	em	Linux)	coloque	o	ficheiro	
-test.php dentro	da	pasta “web”	da	sua	área no	cluster	sigma.ist.utl.pt
+24. Using an SCP client ("WinSCP" for Windows, "scp" on Linux) put the file 
+test.php inside its area "web" folder in sigma.ist.utl.pt cluster 
 
-25. Abra	o	browser	e	aceda	ao	URL:
-http://web.ist.utl.pt/istxxxxx/test.php
-onde	istxxxxx é	o	seu	nome	de	utilizador no	sistema	Fénix.
+25. Open the browser and enter the URL: 
+http://web.ist.utl.pt/istxxxxx/test.php 
+istxxxxx where is your username in the Phoenix system. 
 
-26. Confirme	que	o	script corre	correctamente	e	sem	erros.
+26. Confirm that the script runs correctly and without errors. 
 
-27. Abra	 o	 ficheiro	 test.php num	 editor	 e	 localize	 as	 chamadas	 à	 biblioteca	 PHP	 Data	
-Objects	 (PDO),	 a	 qual	 é	 utilizada	 como	 forma	 de	 interagir	 com	 uma	 base	 de	 dados	
-como	o	MySQL,	a	partir	de	um	script	PHP:
+27. Open the test.php file in an editor and locate the calls to library PHP Date 
+Objects (PDO), which is used as a way of interacting with a database 
+how MySQL from a PHP script: 
 
-• $db	=	new	PDO(…)
-• $db->query(…)
+• $ db = new PDO (...) 
+• $ db> query (...) 
 
-28. No	ficheiro	test.php,	localize	a	consulta	à	base	de	dados:
-• SELECT	*	FROM	account;
-Compare	 o	 resultado	 desta	 consulta, que	 aparece	 no browser,	 com	 o	 resultado	 que	
-obteve	através	da	linha	de	comando.
+28. In test.php file, locate the query to the database: 
 
-29. No	ficheiro	test.php,	localize	o	sítio	onde	está	a	ser	construída	uma	tabela	HTML	para	
-mostrar	os	resultados:
+• SELECT * FROM account; 
 
-• <table> e	</table> definem	o	início e	fim	da	tabela	HTML
+Compare the result of this consultation, which appears in the browser, with the result that 
+obtained via the command line. 
 
-• <tr>	e	</tr>	definem	o	início	e	fim	de	uma	linha	da	tabela	HTML
+29. In test.php file, locate the site where it is being built to an HTML table 
+show the results: 
 
-• <td>	e	</td>	definem	o	início	e	fim	de	uma	célula	na	tabela	HTML
+• <table> and </ table> define the start and end of the HTML table 
 
-• Esta	é	a	forma	típica	de	construção	de	tabelas	em	HTML.	Repare	que	a	tabela	está	
-a	ser	construída	dentro	de	um	ciclo	que	percorre	os	resultados	de	$db->query(…)
+• <tr> and </ tr> define the start and end of an HTML table row 
 
-30. No	browser,	abra	o	código	fonte	da	página	e	compare	esse	código	HTML	com	o	código	
-PHP	do	ficheiro de	script test.php.
+• <td> and </ td> define the beginning and end of a cell in HTML table 
+
+• This is the typical way of building HTML tables. Note that the table is 
+to be built within a loop that runs through the results of $ db> query (...) 
+
+30. In the browser, open the page source and compare this with the HTML code 
+PHP script from test.php file.
 
 
 #### Important Notes
