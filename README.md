@@ -67,7 +67,7 @@ The system produces some messages as it executes instructions file.
 
 14. To list the tables of the database, use the command: show tables; 
 
-15. After connecting to the database can make some queries, such as: 
+15. After connecting to the database can make some queries, such as:
 
 • a complete list of clients: SELECT * FROM customer; 
 
@@ -141,7 +141,7 @@ branch in Redwood is bringing us closer to clients in the area.');
 22. After undertaking the creation of the table, you can execute queries involving restrictions 
 on the textual contents of news articles. 
 
-• Find all the articles whose content relates to "city center":
+* Find all the articles whose content relates to "city center":
 
 ```
 select	*	
@@ -149,8 +149,8 @@ from	bank_news
 where	match(title,	body)	against	('"city	center"' in	boolean	mode);
 ```
 
-• Encontrar	 todos	 os	 artigos	 relacionados	 com	 Perryridge,	 apresentando	 os	
-resultados	ordenados	de	acordo	para	com	a	sua	relevância:
+* Find all related articles Perryridge, presenting the 
+results ordered according to their relevance to:
 
 ```
 select	*,	match(title,	body)	against('perryridge')	as	score
@@ -178,24 +178,28 @@ istxxxxx where is your username in the Phoenix system.
 Objects (PDO), which is used as a way of interacting with a database 
 how MySQL from a PHP script: 
 
-• $ db = new PDO (...) 
-• $ db> query (...) 
+```
+$ db = new PDO (...) 
+$ db> query (...) 
+```
 
 28. In test.php file, locate the query to the database: 
 
-• SELECT * FROM account; 
+```
+SELECT * FROM account; 
+```
 
 Compare the result of this consultation, which appears in the browser, with the result that 
 obtained via the command line. 
 
 29. In test.php file, locate the site where it is being built to an HTML table 
-show the results: 
+show the results:
 
-• <table> and </ table> define the start and end of the HTML table 
+• ```<table>``` and ```</ table>``` define the start and end of the HTML table 
 
-• <tr> and </ tr> define the start and end of an HTML table row 
+• ```<tr>``` and ```</ tr>``` define the start and end of an HTML table row 
 
-• <td> and </ td> define the beginning and end of a cell in HTML table 
+• ```<td>``` and ```</ td>``` define the beginning and end of a cell in HTML table 
 
 • This is the typical way of building HTML tables. Note that the table is 
 to be built within a loop that runs through the results of $ db> query (...) 
