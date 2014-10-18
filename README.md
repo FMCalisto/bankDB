@@ -212,4 +212,4 @@ PHP script from test.php file.
 
 This is not a complete solution and is far to be a complete statment.
 
-It's important to read all Introduction and elements abour a Data Base Introduction.
+It's important to read all Introduction and elements about a Data Base Introduction.
